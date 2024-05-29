@@ -5,7 +5,11 @@
   "projects": {
     "to-do-list": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -27,7 +31,7 @@
               }
             ],
             "styles": [
-              "src/app/ui/globals.css"
+              "src/app/ui/globals.scss"
             ],
             "scripts": []
           },
@@ -91,7 +95,7 @@
               }
             ],
             "styles": [
-              "src/app/ui/globals.css"
+              "src/app/ui/globals.scss"
             ],
             "scripts": []
           }
