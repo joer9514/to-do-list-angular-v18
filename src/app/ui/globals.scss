@@ -1,4 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
-* {
-    background-color: red;
+/* Material UI */
+@use "@angular/material" as mat;
+@use "assets/themes/gentleman-programming.scss";
+
+@include mat.core();
+
+:root {
+  @include mat.all-component-themes(gentleman-programming.$light-theme);
+
+  @media (prefers-color-scheme: dark) {
+    @include mat.all-component-themes(gentleman-programming.$dark-theme);
+  }
 }
+/* Material UI */
+
+/* Custom reset styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+html,
+body {
+  min-height: 100dvh;
+}
+
+html {
+  font-size: calc(14px + (20.56 - 14) * ((100vw - 320px) / (2560 - 320)));
+  /* https://bit.ly/fluid-design */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+/* Custom reset styles */
