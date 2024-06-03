@@ -1,0 +1,13 @@
+@for (task of (tasks$ | async); track task.id) {
+<card-item
+  title="{{ task.title }}"
+  description="{{ task.description }}"
+  [done]="task.isComplete"
+  [data]="task"
+  (doneClick)="onCardTaskDone($event)"
+  (editClick)="onCardTaskEdit($event)"
+  (deleteClick)="onCardTaskDelete($event)"
+/>
+} @empty {
+<p>Vació</p>
+}

@@ -1,0 +1,24 @@
+.card-item {
+  margin: 8px 0;
+  border: thin solid pink;
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    mat-card-content {
+      padding: 8px;
+
+      &[is-done="true"] {
+        text-decoration: line-through;
+      }
+
+      mat-card-title,
+      p {
+        padding: 8px;
+      }
+    }
+  }
+}

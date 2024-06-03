@@ -1,0 +1,25 @@
+<mat-card class="card-item">
+  <div class="card-item-container">
+    <mat-card-content [attr.is-done]="done">
+      <mat-card-title>{{ title }}</mat-card-title>
+      <p>{{ description }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button (click)="onDoneClick()">
+        <mat-icon fontIcon="check" aria-label="Done task"></mat-icon>
+        <span>Done</span>
+      </button>
+
+      <button mat-button (click)="onEditClick()">
+        <mat-icon fontIcon="edit" aria-label="Edit task"></mat-icon>
+        <span>Edit</span>
+      </button>
+
+      <button mat-button (click)="onDeleteClick()">
+        <mat-icon fontIcon="delete" aria-label="Delete task"></mat-icon>
+        <span>Delete</span>
+      </button>
+    </mat-card-actions>
+  </div>
+</mat-card>

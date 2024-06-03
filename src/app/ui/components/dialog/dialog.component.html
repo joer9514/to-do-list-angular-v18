@@ -1,0 +1,8 @@
+<span mat-dialog-title>{{ data.title }}</span>
+<mat-dialog-content>
+  {{ data.description }}
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="handleCancelDialog()">Cancel</button>
+  <button mat-button [mat-dialog-close]="true">Confirm</button>
+</mat-dialog-actions>

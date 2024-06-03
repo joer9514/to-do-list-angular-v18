@@ -1,0 +1,41 @@
+<div class="container">
+  <span mat-dialog-title>{{ data.title }}</span>
+  <p>{{ data.description }}</p>
+
+  <form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
+    <mat-dialog-content style="padding: 0px">
+      <mat-form-field appearance="fill" style="display: block">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Buy beers" formControlName="title" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="display: block">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          placeholder="Let's prepare micheladas!"
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="display: block">
+        <mat-label>Is Complete</mat-label>
+        <mat-select formControlName="isComplete">
+          <mat-option value="true">Yes! finish this task</mat-option>
+          <mat-option value="false">Oh no, I've had some problems</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button
+        mat-button
+        [mat-dialog-close]="true"
+        [disabled]="!this.formGroup.valid"
+        type="submit"
+      >
+        Confirm
+      </button>
+      <button mat-button (click)="handleCancelDialog()">Cancel</button>
+    </mat-dialog-actions>
+  </form>
+</div>
