@@ -8,6 +8,7 @@ import {
   TaskEntity,
   TaskEntityWithoutID,
 } from '@core/task/domain/entities/task.entity';
+import { DialogComponent, DialogData } from '@ui/components/dialog';
 import { CardItemComponent } from '@ui/pages/home/components/card-item';
 import { TasksFormComponent } from '@ui/pages/home/components/tasks-form';
 
@@ -63,6 +64,19 @@ export class CardTaskListsComponent implements OnInit {
   }
 
   public onCardTaskDelete(task: TaskEntity): void {
-    this._deleteTask.deleteTask(task.id);
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '60rem',
+      data: <DialogData>{
+        title: 'Do you want to delete this task?',
+        description: 'Remember that there will be no turning back',
+        task,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((res: boolean) => {
+      if (res) {
+        this._deleteTask.deleteTask(task.id);
+      }
+    });
   }
 }
