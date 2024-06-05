@@ -52,7 +52,6 @@ export class TasksFormComponent extends DialogComponent {
   }
 
   public override handleCancelDialog(): void {
-    this.super().handleCancelDialog();
     this.dialogRef.close();
   }
 
