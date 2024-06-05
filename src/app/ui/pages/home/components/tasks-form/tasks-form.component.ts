@@ -41,7 +41,7 @@ export class TasksFormComponent extends DialogComponent {
     isComplete: new FormControl('', [Validators.required]),
   });
 
-  public ngOnInit(): void {
+  public override ngOnInit(): void {
     this.dialogRef.afterOpened().subscribe(() => {
       this.formGroup.patchValue({
         title: this.data.task.title,
