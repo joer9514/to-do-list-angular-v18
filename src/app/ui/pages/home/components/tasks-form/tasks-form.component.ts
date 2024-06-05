@@ -51,6 +51,10 @@ export class TasksFormComponent extends DialogComponent {
     });
   }
 
+  public handleCancelDialog(): void {
+    super().handleCancelDialog();
+  }
+
   public handleSubmit(): void {
     if (this.formGroup.valid) {
       this.dialogRef.close(this.formGroup.value);
