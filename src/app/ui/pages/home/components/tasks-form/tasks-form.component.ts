@@ -41,7 +41,7 @@ export class TasksFormComponent extends DialogComponent {
     isComplete: new FormControl('', [Validators.required]),
   });
 
-  public override ngOnInit(): void {
+  public ngOnInit(): void {
     this.dialogRef.afterOpened().subscribe(() => {
       this.formGroup.patchValue({
         title: this.data.task.title,
@@ -51,7 +51,7 @@ export class TasksFormComponent extends DialogComponent {
     });
   }
 
-  public handleCancelDialog(): void {
+  public override handleCancelDialog(): void {
     super().handleCancelDialog();
   }
 
